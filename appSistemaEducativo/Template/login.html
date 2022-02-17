@@ -1,0 +1,25 @@
+{%load static%}
+{% if messages %}
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+</div>
+
+{% endif %}
+<link rel="stylesheet" href="{% static '/styleLogin.css'%}">
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <img src="{% static '/userIcon.png'%}" id="icon" alt="User Icon" />
+    </div>
+    <form action="/onlogin/" method="post">
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+  </div>
+</div>

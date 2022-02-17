@@ -1,0 +1,1 @@
+web: gunicorn ProyectoSistemaEducativo.wsgi --log-file -
